@@ -7,9 +7,11 @@ rockchip_setup_interfaces()
 	local board="$1"
 
 	case "$board" in
-	friendlyarm,nanopi-r4s|\
-	friendlyarm,nanopi-r5c)
+	friendlyarm,nanopi-r4s)
 		ucidef_set_interfaces_lan_wan 'eth1' 'eth0'
+		;;
+	friendlyarm,nanopi-r5c)
+		ucidef_set_interfaces_lan_wan 'eth0' 'eth1'
 		;;
 	friendlyarm,nanopi-r5s)
 		ucidef_set_interfaces_lan_wan 'eth1 eth2' 'eth0'
