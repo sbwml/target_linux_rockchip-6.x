@@ -85,6 +85,37 @@ endef
 
 $(eval $(call KernelPackage,drm-rockchip))
 
+define KernelPackage/rockchip-vdec
+  SUBMENU:=$(VIDEO_MENU)
+  TITLE:=Rockchip Video Decoder support
+  DEPENDS:=@TARGET_rockchip +kmod-video-core
+  KCONFIG:= \
+	CONFIG_STAGING=y \
+	CONFIG_STAGING_MEDIA=y \
+	CONFIG_MEDIA_SUPPORT=y \
+	CONFIG_VIDEO_DEV=y \
+	CONFIG_VIDEO_ROCKCHIP_VDEC \
+	CONFIG_STAGING_MEDIA_DEPRECATED=n \
+	CONFIG_MEDIA_CONTROLLER_DVB=n \
+	CONFIG_VIDEO_MAX96712=n
+  FILES:= \
+	$(LINUX_DIR)/drivers/staging/media/rkvdec/rockchip-vdec.ko \
+	$(LINUX_DIR)/drivers/media/v4l2-core/v4l2-h264.ko \
+	$(LINUX_DIR)/drivers/media/v4l2-core/v4l2-mem2mem.ko \
+	$(LINUX_DIR)/drivers/media/v4l2-core/v4l2-vp9.ko \
+	$(LINUX_DIR)/drivers/media/common/videobuf2/videobuf2-common.ko \
+	$(LINUX_DIR)/drivers/media/common/videobuf2/videobuf2-dma-contig.ko \
+	$(LINUX_DIR)/drivers/media/common/videobuf2/videobuf2-v4l2.ko \
+	$(LINUX_DIR)/drivers/media/common/videobuf2/videobuf2-memops.ko
+  AUTOLOAD:=$(call AutoProbe,rockchip-vdec)
+endef
+
+define KernelPackage/rockchip-vdec/description
+  Support for the Rockchip Video Decoder IP present on Rockchip SoCs
+endef
+
+$(eval $(call KernelPackage,rockchip-vdec))
+
 define KernelPackage/saradc-rockchip
   SUBMENU:=$(IIO_MENU)
   TITLE:=Rockchip SARADC support
