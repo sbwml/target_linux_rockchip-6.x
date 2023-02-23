@@ -16,7 +16,7 @@ friendlyarm,nanopi-r5c)
 	ucidef_set_led_default "power" "POWER" "red:power" "1"
 	ucidef_set_led_netdev "wan" "WAN" "green:wan" "eth1"
 	ucidef_set_led_netdev "lan" "LAN" "green:lan" "eth0"
-	ucidef_set_led_netdev "wlan" "WLAN" "green:wlan" "wlan0"
+	ucidef_set_led_netdev "wlan" "WLAN" "green:wlan" "phy0-ap0"
 	;;
 friendlyarm,nanopi-r5s)
 	ucidef_set_led_default "power" "POWER" "red:power" "1"
