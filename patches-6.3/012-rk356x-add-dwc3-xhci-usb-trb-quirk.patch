@@ -32,7 +32,7 @@ index 476b63618..2241fcc31 100644
  				"snps,resume-hs-terminations");
  	dwc->parkmode_disable_ss_quirk = device_property_read_bool(dev,
 diff --git a/drivers/usb/dwc3/core.h b/drivers/usb/dwc3/core.h
-index 8f9959ba9..992d1cdf9 100644
+index 4743e918d..c9e6d27c9 100644
 --- a/drivers/usb/dwc3/core.h
 +++ b/drivers/usb/dwc3/core.h
 @@ -1098,6 +1098,9 @@ struct dwc3_scratchpad_array {
@@ -42,10 +42,10 @@ index 8f9959ba9..992d1cdf9 100644
 + * @xhci_trb_ent_quirk: set if need to enable the Evaluate Next TRB(ENT)
 + *			flag in the TRB data structure to force xHC to
 + *			pre-fetch the next TRB of a TD.
-  * @resume-hs-terminations: Set if we enable quirk for fixing improper crc
+  * @resume_hs_terminations: Set if we enable quirk for fixing improper crc
   *			generation after resume from suspend.
   * @parkmode_disable_ss_quirk: set if we need to disable all SuperSpeed
-@@ -1315,6 +1318,7 @@ struct dwc3 {
+@@ -1316,6 +1319,7 @@ struct dwc3 {
  	unsigned		dis_u2_freeclk_exists_quirk:1;
  	unsigned		dis_del_phy_power_chg_quirk:1;
  	unsigned		dis_tx_ipgap_linecheck_quirk:1;
