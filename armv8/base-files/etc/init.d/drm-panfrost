@@ -1,3 +1,0 @@
-#!/bin/sh /etc/rc.common
-
-chmod -R 777 /dev/dri
