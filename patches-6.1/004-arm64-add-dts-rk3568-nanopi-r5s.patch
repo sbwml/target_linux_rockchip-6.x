@@ -1,8 +1,6 @@
-diff --git a/arch/arm64/boot/dts/rockchip/Makefile b/arch/arm64/boot/dts/rockchip/Makefile
-index 8c15593..1e8c317 100644
 --- a/arch/arm64/boot/dts/rockchip/Makefile
 +++ b/arch/arm64/boot/dts/rockchip/Makefile
-@@ -71,4 +71,6 @@ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3566-roc-pc.dtb
+@@ -71,4 +71,6 @@ dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3566-ro
  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3566-soquartz-cm4.dtb
  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3568-bpi-r2-pro.dtb
  dtb-$(CONFIG_ARCH_ROCKCHIP) += rk3568-evb1-v10.dtb

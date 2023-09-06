@@ -1,8 +1,6 @@
-diff --git a/arch/arm64/boot/dts/rockchip/rk3399-nanopi-r4s.dts b/arch/arm64/boot/dts/rockchip/rk3399-nanopi-r4s.dts
-index 993d85f47..15feab9a4 100644
 --- a/arch/arm64/boot/dts/rockchip/rk3399-nanopi-r4s.dts
 +++ b/arch/arm64/boot/dts/rockchip/rk3399-nanopi-r4s.dts
-@@ -19,6 +19,13 @@ / {
+@@ -19,6 +19,13 @@
  	model = "FriendlyElec NanoPi R4S";
  	compatible = "friendlyarm,nanopi-r4s", "rockchip,rk3399";
  

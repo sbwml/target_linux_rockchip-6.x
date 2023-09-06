@@ -13,9 +13,6 @@ Subject: [PATCH] add hwrng for rk3568
  create mode 100644 Documentation/devicetree/bindings/rng/rockchip,rk3568-rng.yaml
  create mode 100644 drivers/char/hw_random/rk3568-rng.c
 
-diff --git a/Documentation/devicetree/bindings/rng/rockchip,rk3568-rng.yaml b/Documentation/devicetree/bindings/rng/rockchip,rk3568-rng.yaml
-new file mode 100644
-index 000000000..c2f5ef69c
 --- /dev/null
 +++ b/Documentation/devicetree/bindings/rng/rockchip,rk3568-rng.yaml
 @@ -0,0 +1,60 @@
@@ -79,11 +76,9 @@ index 000000000..c2f5ef69c
 +    };
 +
 +...
-diff --git a/arch/arm64/boot/dts/rockchip/rk356x.dtsi b/arch/arm64/boot/dts/rockchip/rk356x.dtsi
-index 164708f1e..718171234 100644
 --- a/arch/arm64/boot/dts/rockchip/rk356x.dtsi
 +++ b/arch/arm64/boot/dts/rockchip/rk356x.dtsi
-@@ -1770,6 +1770,16 @@ usb2phy1_otg: otg-port {
+@@ -1772,6 +1772,16 @@
  		};
  	};
  
@@ -100,8 +95,6 @@ index 164708f1e..718171234 100644
  	pinctrl: pinctrl {
  		compatible = "rockchip,rk3568-pinctrl";
  		rockchip,grf = <&grf>;
-diff --git a/drivers/char/hw_random/Kconfig b/drivers/char/hw_random/Kconfig
-index 3da8e85f8..3e20e4421 100644
 --- a/drivers/char/hw_random/Kconfig
 +++ b/drivers/char/hw_random/Kconfig
 @@ -372,6 +372,20 @@ config HW_RANDOM_STM32
@@ -125,11 +118,9 @@ index 3da8e85f8..3e20e4421 100644
  config HW_RANDOM_PIC32
  	tristate "Microchip PIC32 Random Number Generator support"
  	depends on HW_RANDOM && MACH_PIC32
-diff --git a/drivers/char/hw_random/Makefile b/drivers/char/hw_random/Makefile
-index 3e948cf04..460191bcf 100644
 --- a/drivers/char/hw_random/Makefile
 +++ b/drivers/char/hw_random/Makefile
-@@ -34,6 +34,7 @@ obj-$(CONFIG_HW_RANDOM_IPROC_RNG200) += iproc-rng200.o
+@@ -34,6 +34,7 @@ obj-$(CONFIG_HW_RANDOM_IPROC_RNG200) +=
  obj-$(CONFIG_HW_RANDOM_ST) += st-rng.o
  obj-$(CONFIG_HW_RANDOM_XGENE) += xgene-rng.o
  obj-$(CONFIG_HW_RANDOM_STM32) += stm32-rng.o
@@ -137,9 +128,6 @@ index 3e948cf04..460191bcf 100644
  obj-$(CONFIG_HW_RANDOM_PIC32) += pic32-rng.o
  obj-$(CONFIG_HW_RANDOM_MESON) += meson-rng.o
  obj-$(CONFIG_HW_RANDOM_CAVIUM) += cavium-rng.o cavium-rng-vf.o
-diff --git a/drivers/char/hw_random/rk3568-rng.c b/drivers/char/hw_random/rk3568-rng.c
-new file mode 100644
-index 000000000..b04346b23
 --- /dev/null
 +++ b/drivers/char/hw_random/rk3568-rng.c
 @@ -0,0 +1,250 @@
@@ -393,6 +381,3 @@ index 000000000..b04346b23
 +MODULE_DESCRIPTION("Rockchip True Random Number Generator driver");
 +MODULE_AUTHOR("Lin Jinhan <troy.lin@rock-chips.com>, Aurelien Jarno <aurelien@aurel32.net>");
 +MODULE_LICENSE("GPL v2");
--- 
-2.34.1
-

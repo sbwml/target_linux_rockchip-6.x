@@ -1,5 +1,3 @@
-diff --git a/drivers/gpio/Kconfig b/drivers/gpio/Kconfig
-index 0642f5791..830bc9a8e 100644
 --- a/drivers/gpio/Kconfig
 +++ b/drivers/gpio/Kconfig
 @@ -59,7 +59,7 @@ config DEBUG_GPIO

@@ -14,8 +14,6 @@ Subject: [PATCH] friendlyelec-nanopi-series
  create mode 100644 drivers/soc/friendlyelec/Makefile
  create mode 100644 drivers/soc/friendlyelec/board.c
 
-diff --git a/drivers/soc/Kconfig b/drivers/soc/Kconfig
-index e461c0711..a65fa9f4f 100644
 --- a/drivers/soc/Kconfig
 +++ b/drivers/soc/Kconfig
 @@ -27,5 +27,6 @@ source "drivers/soc/ti/Kconfig"
@@ -25,8 +23,6 @@ index e461c0711..a65fa9f4f 100644
 +source "drivers/soc/friendlyelec/Kconfig"
  
  endmenu
-diff --git a/drivers/soc/Makefile b/drivers/soc/Makefile
-index 69ba6508c..16ac16900 100644
 --- a/drivers/soc/Makefile
 +++ b/drivers/soc/Makefile
 @@ -33,3 +33,4 @@ obj-y				+= ti/
@@ -34,9 +30,6 @@ index 69ba6508c..16ac16900 100644
  obj-$(CONFIG_PLAT_VERSATILE)	+= versatile/
  obj-y				+= xilinx/
 +obj-$(CONFIG_VENDOR_FRIENDLYELEC)	+= friendlyelec/
-diff --git a/drivers/soc/friendlyelec/Kconfig b/drivers/soc/friendlyelec/Kconfig
-new file mode 100644
-index 000000000..642629ab7
 --- /dev/null
 +++ b/drivers/soc/friendlyelec/Kconfig
 @@ -0,0 +1,11 @@
@@ -51,16 +44,10 @@ index 000000000..642629ab7
 +	default n
 +
 +endif
-diff --git a/drivers/soc/friendlyelec/Makefile b/drivers/soc/friendlyelec/Makefile
-new file mode 100644
-index 000000000..870542f05
 --- /dev/null
 +++ b/drivers/soc/friendlyelec/Makefile
 @@ -0,0 +1 @@
 +obj-$(CONFIG_VENDOR_FRIENDLYELEC)	+= board.o
-diff --git a/drivers/soc/friendlyelec/board.c b/drivers/soc/friendlyelec/board.c
-new file mode 100644
-index 000000000..886a8e1f7
 --- /dev/null
 +++ b/drivers/soc/friendlyelec/board.c
 @@ -0,0 +1,143 @@
@@ -207,6 +194,3 @@ index 000000000..886a8e1f7
 +MODULE_AUTHOR("support@friendlyarm.com");
 +MODULE_DESCRIPTION("FriendlyElec NanoPi Series Machine Driver");
 +MODULE_LICENSE("GPL v2");
--- 
-2.34.1
-

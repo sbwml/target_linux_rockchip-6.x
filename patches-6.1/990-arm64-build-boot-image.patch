@@ -15,7 +15,7 @@
  	$(Q)$(MAKE) $(build)=$(boot) $(boot)/$@
 --- a/scripts/Makefile
 +++ b/scripts/Makefile
-@@ -10,6 +10,7 @@ hostprogs-always-$(CONFIG_BUILDTIME_TABLE_SORT)		+= sorttable
+@@ -10,6 +10,7 @@ hostprogs-always-$(CONFIG_BUILDTIME_TABL
  hostprogs-always-$(CONFIG_ASN1)				+= asn1_compiler
  hostprogs-always-$(CONFIG_MODULE_SIG_FORMAT)		+= sign-file
  hostprogs-always-$(CONFIG_SYSTEM_EXTRA_CERTIFICATE)	+= insert-sys-cert
