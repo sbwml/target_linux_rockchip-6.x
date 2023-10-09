@@ -1,7 +1,0 @@
-#!/bin/sh /etc/rc.common
-
-START=99
-start() {
-    sleep 3m && /etc/init.d/led restart > /dev/null 2>&1 &
-}
-
