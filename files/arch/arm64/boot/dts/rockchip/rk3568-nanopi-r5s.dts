@@ -100,6 +100,7 @@
 		interrupts = <RK_PC4 IRQ_TYPE_LEVEL_LOW>;
 		pinctrl-names = "default";
 		pinctrl-0 = <&gmac_int>;
+		realtek,led-data = <0x6d60>;
 	};
 };
 
