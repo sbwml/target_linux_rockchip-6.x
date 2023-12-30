@@ -16,7 +16,7 @@ Signed-off-by: Jon Lin <jon.lin@rock-chips.com>
 
 --- a/drivers/pci/pcie/Kconfig
 +++ b/drivers/pci/pcie/Kconfig
-@@ -110,6 +110,12 @@ config PCIEASPM_PERFORMANCE
+@@ -114,6 +114,12 @@ config PCIEASPM_PERFORMANCE
  	  Disable PCI Express ASPM L0s and L1, even if the BIOS enabled them.
  endchoice
  
@@ -31,7 +31,7 @@ Signed-off-by: Jon Lin <jon.lin@rock-chips.com>
  	depends on PCIEPORTBUS && PM
 --- a/drivers/pci/pcie/Makefile
 +++ b/drivers/pci/pcie/Makefile
-@@ -7,6 +7,7 @@ pcieportdrv-y			:= portdrv_core.o portdr
+@@ -7,6 +7,7 @@ pcieportdrv-y			:= portdrv.o rcec.o
  obj-$(CONFIG_PCIEPORTBUS)	+= pcieportdrv.o
  
  obj-$(CONFIG_PCIEASPM)		+= aspm.o

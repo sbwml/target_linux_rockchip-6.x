@@ -16,7 +16,7 @@ Subject: [PATCH] friendlyelec-nanopi-series
 
 --- a/drivers/soc/Kconfig
 +++ b/drivers/soc/Kconfig
-@@ -27,5 +27,6 @@ source "drivers/soc/ti/Kconfig"
+@@ -31,5 +31,6 @@ source "drivers/soc/ti/Kconfig"
  source "drivers/soc/ux500/Kconfig"
  source "drivers/soc/versatile/Kconfig"
  source "drivers/soc/xilinx/Kconfig"
@@ -25,7 +25,7 @@ Subject: [PATCH] friendlyelec-nanopi-series
  endmenu
 --- a/drivers/soc/Makefile
 +++ b/drivers/soc/Makefile
-@@ -33,3 +33,4 @@ obj-y				+= ti/
+@@ -35,3 +35,4 @@ obj-y				+= ti/
  obj-$(CONFIG_ARCH_U8500)	+= ux500/
  obj-$(CONFIG_PLAT_VERSATILE)	+= versatile/
  obj-y				+= xilinx/
